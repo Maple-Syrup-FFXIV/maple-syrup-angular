@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 import { ApiService } from './api.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { ApiService } from './api.service';
 export class UserService {
   public currentUser: User | null  = null;
 
-  constructor(private api : ApiService) {
+  constructor(private api : ApiService, private router :Router) {
     if(this.currentUser == null && localStorage.getItem("DiscordToken")){
       this.authenticate();
     }
@@ -25,11 +26,11 @@ export class UserService {
       localStorage.setItem("DiscordToken",data.accessToken);
       localStorage.setItem("UserName",data.username);
       this.currentUser = new User();
-      this.currentUser.Id = data.id;
-      this.currentUser.Image = data.image;
-      this.currentUser.UserName = data.username;
-
+      this.currentUser.id = data.id;
+      this.currentUser.image = data.image;
+      this.currentUser.username = data.username;
       console.log(this.currentUser);
+      this.router.navigateByUrl("/");
      })
    }
 
@@ -39,9 +40,9 @@ export class UserService {
       localStorage.setItem("DiscordToken",data.accessToken);
       localStorage.setItem("UserName",data.username);
       this.currentUser = new User();
-      this.currentUser.Id = data.id;
-      this.currentUser.Image = data.image;
-      this.currentUser.UserName = data.username;
+      this.currentUser.id = data.id;
+      this.currentUser.image = data.image;
+      this.currentUser.username = data.username;
      }, error =>{
        localStorage.removeItem("DiscordToken");
        localStorage.removeItem("UserName");

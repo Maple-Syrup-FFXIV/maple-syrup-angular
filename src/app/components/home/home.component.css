@@ -1,0 +1,37 @@
+.carousel-card{
+  background-color: #222222;
+  height: 720px;
+  margin: 1px;
+}
+
+.carousel-next {
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+}
+
+.carousel-next > mat-icon{
+  font-size: 64px;
+  cursor: pointer;
+}
+
+.carousel-previous{
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+
+.carousel-previous > mat-icon{
+  font-size: 64px;
+  cursor: pointer;
+  margin-left: -15px;
+}
+
+.carousel{
+  width: 100%;
+  display: block;
+}
+
+

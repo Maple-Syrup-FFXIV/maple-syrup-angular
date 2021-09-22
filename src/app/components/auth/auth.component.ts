@@ -13,7 +13,11 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(localStorage.getItem("DiscordToken"))
+      this.router.navigateByUrl("/");
+
     this.route.queryParams.subscribe(params =>{
+
       if(params['code']){
         this.userService.login(params['code']);
       }else{

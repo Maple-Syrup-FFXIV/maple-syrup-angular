@@ -2,3 +2,26 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+
+:root{
+  --navbar-main: #444444 /*#284752 */;
+  --primary-color: #74b398;
+  --background-color: #333333/*#19313a*/;
+  --text-color: whitesmoke;
+  --text-warning:  #ff4444;
+}
+
+html,body{
+  background-color: var(--background-color);
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+}
+
+*{
+  font-size: 16px;
+}

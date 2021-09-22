@@ -1,6 +1,6 @@
 export class User {
-  public UserName :string = "";
-  public Image: string = "";
-  public GuildName: string= "";
-  public Id : number = 0;
+  public username :string = "";
+  public image: string = "";
+  public guildName: string= "";
+  public id : number = 0;
 }
